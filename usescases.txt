@@ -1,0 +1,13 @@
+1. pull image from ECR(shared by elwin) on same EC2 instance as ClearML server - will fail because Clearml server will not support GPU 
+
+2. pull image from ECR(shared by elwin) and run on ClearML agent - Done
+
+3. Trigger Experiment from local PC using clearml cli and track on clearml server - Done
+
+
+
+
+
+
+
+     

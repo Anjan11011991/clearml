@@ -1,0 +1,33 @@
+https://clear.ml/docs/latest/docs/deploying_clearml/clearml_server_win/ 
+
+1.Create local directories for data and logs. Open PowerShell and execute the following commands:
+==================================================================================================
+cd c:
+mkdir c:\opt\clearml\data
+mkdir c:\opt\clearml\logs
+
+
+2.Save the ClearML Server docker-compose YAML file.
+==================================================
+curl https://raw.githubusercontent.com/allegroai/clearml-server/master/docker/docker-compose-win10.yml -o c:\opt\clearml\docker-compose-win10.yml
+
+
+3.Run docker-compose. In PowerShell, execute the following commands:
+====================================================================
+docker-compose -f c:\opt\clearml\docker-compose-win10.yml up
+
+4.To Access ClearML UI
+====================
+http://localhost:8080
+
+5.Stop the ClearML
+===================
+docker-compose -f c:\opt\clearml\docker-compose-win10.yml down
+
+
+
+
+
+
+
+

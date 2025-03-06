@@ -1,0 +1,6 @@
+Clearml agent will runner for gihub actions
+
+1. build image with data and push to ECR
+2. run python script in clearml agent
+3. build image with artifact(model.pt) and push to ECR
+4. run model in ecs

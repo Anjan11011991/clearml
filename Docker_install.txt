@@ -1,0 +1,16 @@
+
+docker install
+--------------
+sudo yum update -y
+
+sudo yum install docker
+
+sudo systemctl enable docker
+
+sudo systemctl start docker
+
+sudo usermod -aG docker ec2-user
+
+docker --version
+
+init 6

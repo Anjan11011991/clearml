@@ -1,0 +1,79 @@
+To add agent to the Clearml server
+---------------------------------
+sudo apt update -y
+
+sudo apt install python3 python3-pip
+
+pip3 install clearml-agent
+
+clearml-agent init 
+
+api {
+  web_server: http://10.192.24.128:8080
+  api_server: http://10.192.24.128:8008
+  files_server: http://10.192.24.128:8081
+  credentials {
+    "access_key" = "58Q7OYT69HEFL03W4BEG"
+    "secret_key" = "p7B7HJnIjgMVJVv4JYRL9tl5nYJqBjZQysaeYGUv6y1OutgRJf"
+  }
+}
+
+To find the path of clearml-agent directory
+------------------------------------------
+
+which clearml-agent
+
+
+/home/ubuntu/.local/bin/clearml-agent -ubunut
+
+
+To make clearml-agent as service 
+--------------------------------
+sudo vim /etc/systemd/system/clearml-agent.service
+
+
+[Unit]
+Description=ClearML Agent
+After=network.target
+
+[Service]
+Type=simple
+User=ubuntu
+WorkingDirectory=/home/ubuntu
+ExecStart=/home/ubuntu/.local/bin/clearml-agent daemon --queue default
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
+
+To reload the clearclearml-agent
+--------------------------------
+sudo systemctl daemon-reload
+
+
+To start the clearclearml-agent
+-------------------------------
+
+sudo systemctl start clearml-agent
+
+
+To clearclearml-agentenable on boot 
+-----------------------------------
+
+sudo systemctl enable clearml-agent
+
+
+To check the status of clearclearml-agent
+-----------------------------------
+sudo systemctl status clearml-agent
+
+
+
+
+
+
+
+
+
+
